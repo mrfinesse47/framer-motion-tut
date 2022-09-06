@@ -23,13 +23,13 @@ const containerVariants = {
 const childVariant = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
 
 const Order = ({ pizza }) => {
-  const [showTitle, setShowTitle] = useState(true);
+  // const [showTitle, setShowTitle] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowTitle(false);
-    }, 4000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowTitle(false);
+  //   }, 4000);
+  // }, []);
   return (
     <motion.div
       className='container order'
@@ -37,12 +37,15 @@ const Order = ({ pizza }) => {
       initial='hidden' //propigates to children
       animate='visible' //propigates to children
     >
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showTitle && (
           <motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>
         )}
       </AnimatePresence>
-      {/* //https://www.youtube.com/watch?v=sClYgoPOpaI&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i&index=11&ab_channel=TheNetNinja */}
+      shows how to animate out think as they disappear from dom
+      //https://www.youtube.com/watch?v=sClYgoPOpaI&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i&index=11&ab_channel=TheNetNinja */}
+
+      <h2>Thank you for your order :)</h2>
       <motion.p variants={childVariant}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
