@@ -7,6 +7,20 @@ const containerVariants = {
   visible: { opacity: 1, x: 0, transition: { type: 'spring', delay: 0.5 } },
 };
 
+const buttonVariants = {
+  // visible: { transition: { delay: 2 }, x: [0, -20, 20, -20, 20, 0] },
+  hover: {
+    // scale: [1, 1.1, 1, 1.1, 1], //keyframes https://www.youtube.com/watch?v=lY2TZXEgYUw&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i&index=9&ab_channel=TheNetNinja
+    scale: 1.1,
+    textShadow: '0px 0px 8px rgba(255,255,255)',
+    boxShadow: '0px 0px 8px rgba(255,255,255)',
+    transition: {
+      duration: 0.3, //controls the duration of each keyframe 1->1.1
+      yoyo: 10, //or use Infinity to have it go forever
+    },
+  },
+};
+
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
     'mushrooms',
@@ -44,11 +58,13 @@ const Toppings = ({ addTopping, pizza }) => {
 
       <Link to='/order'>
         <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: '0px 0px 8px rgba(255,255,255)',
-            boxShadow: '0px 0px 8px rgba(255,255,255)',
-          }}
+          // whileHover={{
+          //   scale: 1.1,
+          //   textShadow: '0px 0px 8px rgba(255,255,255)',
+          //   boxShadow: '0px 0px 8px rgba(255,255,255)',
+          // }}
+          variants={buttonVariants}
+          whileHover='hover'
         >
           Order
         </motion.button>

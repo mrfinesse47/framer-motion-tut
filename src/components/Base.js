@@ -12,6 +12,20 @@ const nextVariants = {
   visible: { x: 0, transition: { type: 'spring', stiffness: 120 } },
 };
 
+const buttonVariants = {
+  // visible: { transition: { delay: 2 }, x: [0, -20, 20, -20, 20, 0] },
+  hover: {
+    // scale: [1, 1.1, 1, 1.1, 1], //keyframes https://www.youtube.com/watch?v=lY2TZXEgYUw&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i&index=9&ab_channel=TheNetNinja
+    scale: 1.1,
+    textShadow: '0px 0px 8px rgba(255,255,255)',
+    boxShadow: '0px 0px 8px rgba(255,255,255)',
+    transition: {
+      duration: 0.3, //controls the duration of each keyframe 1->1.1
+      yoyo: 10, //or use Infinity to have it go forever
+    },
+  },
+};
+
 const Base = ({ addBase, pizza }) => {
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust'];
 
@@ -49,11 +63,13 @@ const Base = ({ addBase, pizza }) => {
         >
           <Link to='/toppings'>
             <motion.button
-              whileHover={{
-                scale: 1.1,
-                textShadow: '0px 0px 8px rgba(255,255,255)',
-                boxShadow: '0px 0px 8px rgba(255,255,255)',
-              }}
+              // whileHover={{
+              //   scale: 1.1,
+              //   textShadow: '0px 0px 8px rgba(255,255,255)',
+              //   boxShadow: '0px 0px 8px rgba(255,255,255)',
+              // }}
+              variants={buttonVariants}
+              whileHover='hover'
             >
               Next
             </motion.button>

@@ -15,9 +15,9 @@ const containerVariants = {
     },
   },
   //https://www.youtube.com/watch?v=lCe0F_0sbeE&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i&index=8&ab_channel=TheNetNinja
-  //explains when
-  //mass moves slower
-  // damping means more or kess oscillation
+  // explains property when
+  // mass moves slower
+  // damping means more or less oscillation
 };
 
 const childVariant = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
