@@ -22,14 +22,14 @@ const containerVariants = {
 
 const childVariant = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
   // const [showTitle, setShowTitle] = useState(true);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowTitle(false);
-  //   }, 4000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true);
+    }, 3000);
+  }, [setShowModal]);
   return (
     <motion.div
       className='container order'
